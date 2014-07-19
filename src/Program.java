@@ -1,21 +1,37 @@
-import org.opencv.core.Core;
-import org.opencv.core.CvType;
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfRect;
-import org.opencv.core.Point;
-import org.opencv.core.Rect;
-import org.opencv.core.Scalar;
-import org.opencv.highgui.Highgui;
-import org.opencv.objdetect.CascadeClassifier;
+import imageenchancement.DogImageRestoration;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import org.opencv.core.Core;
 
 public class Program {
-	
 	public static void main(String[] args) {
 		//Load the OpenCV library 
 		System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
 		
+		//imgenh();
+    	imgcmp();
+		
+	}
+	
+	/**
+	 * Image compression assignment
+	 */
+	public static void imgcmp() {
+		SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {	
+                GUI ex = new GUI();
+                ex.setVisible(true);
+            }
+        });
+	}
+	
+	/**
+	 * Image enhancement assignment
+	 */
+	public static void imgenh() {
 		DogImageRestoration.run();
 	}
-
 }
